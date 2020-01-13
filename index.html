@@ -1,0 +1,1111 @@
+<!doctype html>
+<html lang="de" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>DIY Closed Loop</title>
+    <meta name="description" content="Erfahrung mit einem DIY Closed-Loop-System auf Basis von #OpenAPS.">
+
+    <!-- URL CANONICAL -->
+    <!-- <link rel="canonical" href="http://your-url.com/permalink"> -->
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext"
+        rel="stylesheet">
+
+    <!-- CSS Base -->
+    <link rel="stylesheet" type='text/css' media='all' href="assets/webslides/static/css/webslides.css">
+
+    <!-- CSS local stuff -->
+    <link rel="stylesheet" type="text/css" media="all" href="assets/local.css">
+
+    <!-- SOCIAL CARDS (ADD YOUR INFO) -->
+
+    <!-- FACEBOOK -->
+    <!-- EDIT -->
+    <meta property="og:url" content="http://your-url.com/permalink">
+
+    <!-- EDIT -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="DIY Closed Loop" />
+    <meta property="og:description" content="Erfahrung mit einem DIY Closed-Loop-System auf Basis von #OpenAPS.">
+
+    <!-- EDIT -->
+    <meta property="og:updated_time" content="2020-01-13T17:30:00">
+    <!-- EDIT -->
+    <meta property="og:image" content="assets/webslides/static/images/share-webslides.jpg">
+    <!-- EDIT -->
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="429">
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@webslides">
+
+    <!-- EDIT -->
+    <meta name="twitter:creator" content="@liske">
+    <!-- EDIT -->
+    <meta name="twitter:title" content="DIY Closed Loop">
+    <!-- EDIT -->
+    <meta name="twitter:description" content="Erfahrung mit einem DIY Closed-Loop-System auf Basis von #OpenAPS.">
+    <!-- EDIT -->
+    <meta name="twitter:image" content="assets/webslides/static/images/share-webslides.jpg">
+
+    <!-- EDIT -->
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" sizes="16x16" href="assets/webslides/static/images/favicons/favicon.png">
+    <link rel="shortcut icon" sizes="32x32" href="assets/webslides/static/images/favicons/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="assets/webslides/static/images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="assets/webslides/static/images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="assets/webslides/static/images/favicons/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="assets/webslides/static/images/favicons/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="assets/webslides/static/images/favicons/favicon-192.png">
+
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
+
+    <style>
+        .tl-flex-small {
+            justify-content: space-evenly;
+            align-content: space-between;
+            align-items: center;
+        }
+
+        .tl-flex-small li {
+            flex-grow: initial !important;
+            width: initial !important;
+        }
+
+        .tl-flex-small li div h2 {
+            margin-left: .5em;
+            margin-right: .5em;
+        }
+
+        .tl-flex-small .description li {
+            padding-left: .5em;
+            padding-right: .5em;
+        }
+
+        .tl-green {
+            color: #077;
+        }
+
+        .tl-purple {
+            color: #62b;
+        }
+
+        .tl-red {
+            color: #c23;
+        }
+    </style>
+
+    <!-- Required -->
+    <script src="assets/webslides/static/js/webslides.js"></script>
+
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+    <script defer src="assets/fontawesome/js/all.min.js"></script>
+</head>
+
+<body>
+    <main role="main">
+        <article id="webslides">
+
+            <section class="bg-black">
+                <span class="background dark"
+                    style="background-image:url('https://source.unsplash.com/MfnX4XtGnvU/1600x800')"></span>
+                <!--.wrap = container (width: 90%) -->
+                <div class="wrap aligncenter">
+                    <h1>
+                        <strong>DIY Closed Loop</strong>
+                    </h1>
+                    <p class="text-intro"><strong>#WeAreNotWaiting</strong></p>
+                </div>
+                <!-- .end .wrap -->
+            </section>
+            <section class="fullscreen">
+                <div class="card-25">
+                    <figure>
+                        <div style="padding-top: 2em; text-align: left; margin: 1em">
+
+                            <h3>Thomas Liske</h3>
+                            <p class="text-intro"><small>Teamleiter DataCenter Services</small></p>
+                            <hr />
+                            <ul class="description">
+                                <li><strong class="text-label">1997</strong> Manifestation (ICT)</li>
+                                <li><strong class="text-label">2003</strong> Pumpe</li>
+                                <li><strong class="text-label">2017</strong> Open Looper</li>
+                                <li><strong class="text-label">2018</strong> Closed Looper</li>
+                            </ul>
+                        </div>
+
+
+                    </figure>
+                    <div class="wrap">
+                        <span class="background dark" style="background-image:url('assets/images/IMG_5344.jpg')"></span>
+                    </div>
+                </div>
+                <!-- .end .wrap -->
+            </section>
+
+            <section class="fullscreen">
+                <div class="card-50">
+                    <figure>
+                        <img src="https://source.unsplash.com/ciMJn3mD5u8/1600x800">
+
+                    </figure>
+                    <div class="flex-content">
+                        <h2>künstliche Bauchspeicheldrüse</h2>
+                        <p class="text-intro">Artificial Pancreas</p>
+                        <ul class="description">
+                            <li><strong class="text-label">Bekannt:</strong>
+                                seit 100 n. Chr. diabétes als Krankheit</li>
+                            <li><strong class="text-label">Insulin:</strong>
+                                seit 1923 verfügbar</li>
+                            <li><strong class="text-label">Forschung:</strong>
+                                seit 1970 verschiedene Looping Ansätze</li>
+                            <li><strong class="text-label">Lösungen:</strong>
+                                seit 2015 DIY</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="fullscreen">
+                <div class="card-50">
+                    <figure>
+                        <img src="https://source.unsplash.com/BXOXnQ26B7o/1600x800">
+
+                    </figure>
+                    <div class="flex-content">
+                        <h2>#WeAreNotWaiting</h2>
+                        <p class="text-intro">Nightscout Foundation</p>
+                        <ul class="description">
+                            <li><strong class="text-label">2012</strong>
+                                bei John Costik's Sohn wird T1D diagnostiziert </li>
+                            <li><strong class="text-label"></strong>&nbsp;</li>
+                            <li><strong class="text-label"></strong>&nbsp;</li>
+                            <li><strong class="text-label"></strong>&nbsp;</li>
+                            <li><strong class="text-label"></strong>&nbsp;</li>
+                            <li><strong class="text-label"></strong>&nbsp;</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="fullscreen no-anim">
+                <div class="card-50">
+                    <figure>
+                        <img src="https://source.unsplash.com/BXOXnQ26B7o/1600x800">
+                    </figure>
+                    <div class="flex-content">
+                        <h2>#WeAreNotWaiting</h2>
+                        <p class="text-intro">Nightscout Foundation</p>
+                        <ul class="description">
+                            <li><strong class="text-label">2012</strong>
+                                bei John Costik's Sohn wird T1D diagnostiziert </li>
+                            <li><strong class="text-label">&nbsp;</strong>
+                                Dexcom G4 CGM kommt auf den Markt (USA)</li>
+                            <li><strong class="text-label">&nbsp;</strong></li>
+                            <li><strong class="text-label">&nbsp;</strong></li>
+                            <li><strong class="text-label">&nbsp;</strong></li>
+                            <li><strong class="text-label">&nbsp;</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="fullscreen no-anim">
+                <div class="card-50">
+                    <figure>
+                        <img src="https://source.unsplash.com/BXOXnQ26B7o/1600x800">
+                    </figure>
+                    <div class="flex-content">
+                        <h2>#WeAreNotWaiting</h2>
+                        <p class="text-intro">Nightscout Foundation</p>
+                        <ul class="description">
+                            <li><strong class="text-label">2012</strong>
+                                bei John Costik's Sohn wird T1D diagnostiziert </li>
+                            <li><strong class="text-label">&nbsp;</strong>
+                                Dexcom G4 CGM kommt auf den Mark (USA)</li>
+                            <li><strong class="text-label">&nbsp;</strong><i>Hilft nicht unter der Woche!</i></li>
+                            <li><strong class="text-label">&nbsp;</strong></li>
+                            <li><strong class="text-label">&nbsp;</strong></li>
+                            <li><strong class="text-label">&nbsp;</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="fullscreen no-anim">
+                <div class="card-50">
+                    <figure>
+                        <img src="https://source.unsplash.com/BXOXnQ26B7o/1600x800">
+                    </figure>
+                    <div class="flex-content">
+                        <h2>#WeAreNotWaiting</h2>
+                        <p class="text-intro">Nightscout Foundation</p>
+                        <ul class="description">
+                            <li><strong class="text-label">2012</strong>
+                                bei John Costik's Sohn wird T1D diagnostiziert </li>
+                            <li><strong class="text-label">&nbsp;</strong>
+                                Dexcom G4 CGM kommt auf den Mark (USA)</li>
+                            <li><strong class="text-label">&nbsp;</strong><i>Hilft nicht unter der Woche!</i></li>
+                            <li><strong class="text-label">&nbsp;</strong>
+                                &rarr; John entwickelt DIY Lösung</li>
+                            <li><strong class="text-label">&nbsp;</strong></li>
+                            <li><strong class="text-label">&nbsp;</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="fullscreen no-anim">
+                <div class="card-50">
+                    <figure>
+                        <img src="https://source.unsplash.com/BXOXnQ26B7o/1600x800">
+                    </figure>
+                    <div class="flex-content">
+                        <h2>#WeAreNotWaiting</h2>
+                        <p class="text-intro">Nightscout Foundation</p>
+                        <ul class="description">
+                            <li><strong class="text-label">2012</strong>
+                                bei John Costik's Sohn wird T1D diagnostiziert </li>
+                            <li><strong class="text-label">&nbsp;</strong>
+                                Dexcom G4 CGM kommt auf den Mark (USA)</li>
+                            <li><strong class="text-label">&nbsp;</strong><i>Hilft nicht unter der Woche!</i></li>
+                            <li><strong class="text-label">&nbsp;</strong>
+                                &rarr; John entwickelt DIY Lösung</li>
+                            <li><strong class="text-label"></strong>
+                                &rarr; Social Media Postings gehen viral <a
+                                    href="https://twitter.com/jcostik">@jcostik</a></li>
+                            <li><strong class="text-label">&nbsp;</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="fullscreen no-anim">
+                <div class="card-50">
+                    <figure>
+                        <img src="https://source.unsplash.com/BXOXnQ26B7o/1600x800">
+                    </figure>
+                    <div class="flex-content">
+                        <h2>#WeAreNotWaiting</h2>
+                        <p class="text-intro">Nightscout Foundation</p>
+                        <ul class="description">
+                            <li><strong class="text-label">2012</strong>
+                                bei John Costik's Sohn wird T1D diagnostiziert </li>
+                            <li><strong class="text-label">&nbsp;</strong>
+                                Dexcom G4 CGM kommt auf den Mark (USA)</li>
+                            <li><strong class="text-label">&nbsp;</strong><i>Hilft nicht unter der Woche!</i></li>
+                            <li><strong class="text-label">&nbsp;</strong>
+                                &rarr; John entwickelt DIY Lösung</li>
+                            <li><strong class="text-label"></strong>
+                                &rarr; Social Media Postings gehen viral <a
+                                    href="https://twitter.com/jcostik">@jcostik</a></li>
+                            <li><strong class="text-label">2013</strong>Veröffentlichung
+                                durch <i>Nightscout Foundation</i></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aligncenter">
+                <div style="margin: auto;">
+                    <ul class="flexblock gallery">
+                        <li>
+                            <figure>
+                                <img src="assets/images/WSJ-Infographic.jpg">
+                                <figcaption class="text-intro"><a
+                                        href="https://github.com/nightscout/cgm-remote-monitor">Nightscout Web
+                                        Monitor</a></figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+
+            <section class="fullscreen">
+                <div class="card-50">
+                    <figure>
+                        <img src="https://source.unsplash.com/N4FB-VFMNEk/1600x800">
+
+                    </figure>
+                    <div class="flex-content">
+                        <h2>#OpenAPS</h2>
+                        <p class="text-intro">Open Artificial Pancreas System</p>
+                        <ul class="description">
+                            <li><strong class="text-label">2013</strong>
+                                Dana M. Lewis dated Scott Leibrand<br />
+                                <span class="text-label"></span>
+                                <i>he asked why my CGM didn’t talk to my insulin pump</i></li>
+                            <li><strong class="text-label"></strong>
+                                Dana und Scott entwickeln "DIYPS" System</li>
+                            <li><strong class="text-label">2014</strong>
+                                Ben West entdeckt Möglichkeit eine Insulinpumpe zu steuern</li>
+                            <li><strong class="text-label">2015</strong>
+                                Veröffentlichung von <i>OpenAPS</i></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- .end .wrap -->
+            </section>
+
+
+            <section class="fullscreen">
+                <div class="card-25">
+                    <figure>
+                        <img src="https://source.unsplash.com/RLw-UC03Gwc/1600x800">
+
+                    </figure>
+                    <div class="flex-content">
+                        <h2>#OpenAPS</h2>
+                        <p class="text-intro">Open Artificial Pancreas
+                            System</p>
+
+                        <h3>Idee</h3>
+                        <ul>
+                            <li>Entwicklung einer offenen* künstlichen Bauchspeicheldrüse</li>
+                            <li>Nutzung von Schnittstellen existierender <i>medizinischer</i>
+                                Produkte</li>
+                            <li>Automatisierung &amp; Verbesserung der sonst
+                                manuell gefällten Entscheidungen</li>
+                            <li>Steuerung durch TBR &rarr; <i>Fail-safe Design</i>
+                            </li>
+                            <li>Mensch vs. Statistik</li>
+                            <li>Nutzer sind Forscher und Studie (n=1) zugleich</li>
+                        </ul>
+
+                        <h3 style="margin-top: 1em;">Ziel</h3>
+                        <ul>
+                            <li>Verbesserung der Lebensqualität</li>
+                            <li>Risikoreduzierung für Folgeerkrankungen</li>
+                            <li>schnelle Verfügbarkeit für <i>jeden</i></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- .end .wrap -->
+            </section>
+
+
+            <section class="fullscreen">
+                <div class="wrap">
+                    <div class="flex-content">
+                        <h2><strong>kommerzielle</strong> Apps &#128078;</h2>
+                        <hr>
+                        <ul class="flexblock tl-flex-small">
+                            <li>
+                                <img src="assets/images/play-anydana.png">
+                            </li>
+                            <li>
+                                <img src="assets/images/play-dexcom-g5.png">
+                            </li>
+                            <li>
+                                <img src="assets/images/play-dexcom-g6.png">
+                            </li>
+                            <li>
+                                <img src="assets/images/play-eversense.png">
+                            </li>
+                            <li>
+                                <img src="assets/images/play-librelink.png">
+                            </li>
+                            <li>
+                                <img src="assets/images/play-minimed.png">
+                            </li>
+                        </ul>
+                        <ul class="flexblock tl-flex-small">
+                            <li>
+                                <img src="assets/images/play-linkblucon.png">
+                            </li>
+                            <li>
+                                <img src="assets/images/play-tomato.png">
+                            </li>
+                        </ul>
+                        <div class="flexblock tl-flex-small">
+                            <ul class="text-cols">
+                                <li>
+                                    <span class="text-label">Bewertung</span> &empty;&thinsp;2,6&thinsp;&#9733;
+                                </li>
+                                <li>
+                                    <span class="text-label">Stand</span> Januar 2020
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="bg-black">
+                <span class="background-top dark"
+                    style="background-image:url('https://source.unsplash.com/GpOpP4YPu30/1600x800')"></span>
+                <!--.wrap = container (width: 90%) -->
+                <div class="wrap">
+                    <div class="grid vertical-align">
+                        <div class="column">
+                            <h3><strong style="letter-spacing: 0.3em;">WARNUNG</strong></h3>
+                        </div>
+                        <div class="column">
+                            <ul class="text-intro wide-v">
+                                <li>verwende was <strong>du</strong> verstehst</li>
+                                <li>&nbsp;</li>
+                                <li>&nbsp;</li>
+                                <li>&nbsp;</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- .end .wrap -->
+            </section>
+            <section class="bg-black no-anim">
+                <span class="background-top dark"
+                    style="background-image:url('https://source.unsplash.com/GpOpP4YPu30/1600x800')"></span>
+                <!--.wrap = container (width: 90%) -->
+                <div class="wrap">
+                    <div class="grid vertical-align">
+                        <div class="column">
+                            <h3><strong style="letter-spacing: 0.3em;">WARNUNG</strong></h3>
+                        </div>
+                        <div class="column">
+                            <ul class="text-intro wide-v">
+                                <li>verwende was du verstehst</li>
+                                <li>nutze was <strong>dir</strong> hilft</li>
+                                <li>&nbsp;</li>
+                                <li>&nbsp;</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- .end .wrap -->
+            </section>
+            <section class="bg-black no-anim">
+                <span class="background-top dark"
+                    style="background-image:url('https://source.unsplash.com/GpOpP4YPu30/1600x800')"></span>
+                <div class="wrap">
+                    <div class="grid vertical-align">
+                        <div class="column">
+                            <h3><strong style="letter-spacing: 0.3em;">WARNUNG</strong></h3>
+                        </div>
+                        <div class="column">
+                            <ul class="text-intro wide-v">
+                                <li>verwende was du verstehst</li>
+                                <li>nutze was dir hilft</li>
+                                <li><strong>alles</strong> ist fehlerhaft</li>
+                                <li>&nbsp;</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="bg-black no-anim">
+                <span class="background-top dark"
+                    style="background-image:url('https://source.unsplash.com/GpOpP4YPu30/1600x800')"></span>
+                <!--.wrap = container (width: 90%) -->
+                <div class="wrap">
+                    <div class="grid vertical-align">
+                        <div class="column">
+                            <h3><strong style="letter-spacing: 0.3em;">WARNUNG</strong></h3>
+                        </div>
+                        <div class="column">
+                            <ul class="text-intro wide-v">
+                                <li>verwende was du verstehst</li>
+                                <li>nutze was dir hilft</li>
+                                <li>alles ist fehlerhaft</li>
+                                <li><strong>Sicherheit</strong> geht vor</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- .end .wrap -->
+            </section>
+
+            <section class="aligncenter">
+                <div class="wrap">
+                    <ul class="flexblock gallery">
+                        <li>
+                            <figure>
+                                <img src="https://source.unsplash.com/V3DokM1NQcs/514x514">
+                                <figcaption>
+                                    <h2>Betroffene</h2>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li style="visibility: hidden"></li>
+                        <li style="visibility: hidden"></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="aligncenter no-anim">
+                <div class="wrap">
+                    <ul class="flexblock gallery">
+                        <li>
+                            <figure>
+                                <img src="https://source.unsplash.com/V3DokM1NQcs/514x514">
+                                <figcaption>
+                                    <h2>Betroffene</h2>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="https://source.unsplash.com/Ae5jmF2PJXg/514x514">
+                                <figcaption>
+                                    <h2>Gesellschaft &amp; Umfeld</h2>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li style="visibility: hidden"></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="aligncenter no-anim">
+                <div class="wrap">
+                    <ul class="flexblock gallery">
+                        <li>
+                            <figure>
+                                <img src="https://source.unsplash.com/V3DokM1NQcs/514x514">
+                                <figcaption>
+                                    <h2>Betroffene</h2>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="https://source.unsplash.com/Ae5jmF2PJXg/514x514">
+                                <figcaption>
+                                    <h2>Gesellschaft &amp; Umfeld</h2>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="https://source.unsplash.com/7Mg7A3TvFZE/514x514">
+                                <figcaption>
+                                    <h2>Medizin</h2>
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="fullscreen">
+                <div class="wrap">
+                    <div class="flex-content">
+                        <h2><strong>Zahlen, &hellip;</strong></h2>
+                        <table class="aligncenter">
+                            <tr>
+                                <th class="aligncenter">Quartal</th>
+                                <th class="aligncenter">HbA1c</th>
+                                <th class="aligncenter">TBR</th>
+                                <th class="aligncenter">TIR</th>
+                                <th class="aligncenter">TAR</th>
+                            </tr>
+                            <tr>
+                                <td>Q1 2019</td>
+                                <td>6,2&thinsp;%</td>
+                                <td>8,4&thinsp;%</td>
+                                <td>72,0&thinsp;%</td>
+                                <td>19,6&thinsp;%</td>
+                            </tr>
+                            <tr>
+                                <td>Q2 2019</td>
+                                <td>6,6&thinsp;%</td>
+                                <td>12,7&thinsp;%</td>
+                                <td>73,6&thinsp;%</td>
+                                <td>13,7&thinsp;%</td>
+                            </tr>
+                            <tr>
+                                <td>Q3 2019</td>
+                                <td>6,1&thinsp;%</td>
+                                <td>10,7&thinsp;%</td>
+                                <td>79,9&thinsp;%</td>
+                                <td>9,4&thinsp;%</td>
+                            </tr>
+                            <tr>
+                                <td>Q4 2019</td>
+                                <td>6,3&thinsp;%</td>
+                                <td>12,8&thinsp;%</td>
+                                <td>72,7&thinsp;%</td>
+                                <td>14,5&thinsp;%</td>
+                            </tr>
+                        </table>
+                        <p class="text-context">
+                            Zielbereich: 3,9&thinsp;mmol/l &ndash; 10&thinsp;mmol/l
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="fullscreen no-anim">
+                <div class="wrap">
+                    <div class="flex-content">
+                        <h2><strong>Zahlen, &hellip;</strong></h2>
+                        <table class="aligncenter">
+                            <tr>
+                                <th class="aligncenter">Quartal</th>
+                                <th class="aligncenter">HbA1c</th>
+                                <th class="aligncenter">TBR</th>
+                                <th class="aligncenter">TIR</th>
+                                <th class="aligncenter">TAR</th>
+                            </tr>
+                            <tr>
+                                <td>Q1 2019</td>
+                                <td>6,2&thinsp;%</td>
+                                <td>8,4&thinsp;%</td>
+                                <td>72,0&thinsp;%</td>
+                                <td>19,6&thinsp;%</td>
+                            </tr>
+                            <tr>
+                                <td>Q2 2019</td>
+                                <td>6,6&thinsp;%</td>
+                                <td>12,7&thinsp;%</td>
+                                <td>73,6&thinsp;%</td>
+                                <td>13,7&thinsp;%</td>
+                            </tr>
+                            <tr>
+                                <td>Q3 2019</td>
+                                <td>6,1&thinsp;%</td>
+                                <td>10,7&thinsp;%</td>
+                                <td>79,9&thinsp;%</td>
+                                <td>9,4&thinsp;%</td>
+                            </tr>
+                            <tr>
+                                <td>Q4 2019</td>
+                                <td>6,3&thinsp;%</td>
+                                <td>12,8&thinsp;%</td>
+                                <td>72,7&thinsp;%</td>
+                                <td>14,5&thinsp;%</td>
+                            </tr>
+                        </table>
+                        <p class="text-context tl-red">
+                            <span style="font-weight: bolder;">y</span>our <span
+                                style="font-weight: bolder;">d</span>iabetes <span
+                                style="font-weight: bolder;">m</span>ay <span style="font-weight: bolder;">v</span>ary
+                        </p>
+                    </div>
+                    <div class="tl-red" style="position: absolute; top: 55%; left: 50%;
+                    transform: translate(-50%,-50%); font-size: 256px; font-stretch: expanded;">
+                        <div><strong>Y&nbsp;D&nbsp;M&nbsp;V</strong></div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="fullscreen">
+                <div class="card-50">
+                    <figure>
+                        <img src="assets/images/IMG_5344.jpg">
+                    </figure>
+                    <div class="flex-content">
+                        <h2><strong>Meine</strong> Anforderungen</h2>
+                        <hr>
+                        <ol class="text-cols">
+                            <li>muss <i>offline</i> funktionieren</li>
+                            <li>keine <i>steuernde</i> Cloud-Lösung</li>
+                            <li>möglichst wenige Zusatzgeräte</li>
+                            <li>muss <i>besser</i> sein als ich</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="wrap size-50">
+                    <h2><strong>AndroidAPS</strong></h2>
+                    <img src="assets/images/aaps-modules.png" style="width:
+                    100%" />
+                    <p class="text-context">
+                        Bild: <a href="https://androidaps.readthedocs.io/en/latest/CROWDIN/de/index.html"
+                            target="diyps-links">AndroidAPS-Dokumentation</a>
+                    </p>
+                </div>
+            </section>
+
+            <section class="bg-black">
+                <span class="background dark"
+                    style="background-image:url('https://source.unsplash.com/0oNAIDc0HUA/1600x800')"></span>
+                <div class="wrap">
+                    <h3>AndroidAPS &ndash; <strong>CGM / FGM</strong></h3>
+                    <div class="flex-content">
+                        <ul class="text-intro">
+                            <li>Dexcom G6<br /><small><i>Dexcom</i>
+                                    App (Patch)</small> | <i>xDrip+</i> App</li>
+                            <li>Dexcom G5<br /><small><i>Dexcom</i> App (Patch)</small></li>
+                            <li>Libre 2<br /><small>Transmitter | direkt</small></li>
+                            <li>Libre 1<br /><small>Transmitter</small></li>
+                            <li>Eversense<br /><small> <i>Dexcom</i>
+                                    App (Patch)</small> &amp; <i>ESEL</i> App</li>
+                            <li>MM640g / MM630g<br /><small><i>600SeriesAndroidUploader</i>
+                                    App via <i>Nightscout</i></small></li>
+                            <li>PocTech CT-100<br /><small><i>PocTech</i> App</small></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="bg-black">
+                <span class="background dark"
+                    style="background-image:url('https://source.unsplash.com/MyzdAXPgr_8/1600x800')"></span>
+                <div class="wrap">
+                    <h3><strong>CGM mit Freestyle Libre 2</strong></h3>
+                    <ul class="text-intro">
+                        <li>bei Start des Sensors einmalige Bluetooth-Kopplung möglich</li>
+                        <li>Sensor überträgt einen Messwert pro Minute<br />
+                            <small>Lesegerät oder <i>LibreLink</i> App</small></li>
+                    </ul>
+                    <ul class="text-intro" style="margin-top: 2em; visibility: hidden">
+                        <li>App <i>erzwingt</i> Online-Kopplung </li>
+                        <li>App bietet keine API</li>
+                        <li>
+                            App zeigt über Bluetooth empfangene
+                            Messdaten <i>nicht</i> an</li>
+                        <li>
+                            <i>LibreLink</i> App reagiert <i>nur</i> auf Schwellwerte (niedrig &amp; hoch)
+                        </li>
+                        <li>Verschleierung der Messwerte via NFC (Libre 2)</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="bg-black no-anim">
+                <span class="background dark"
+                    style="background-image:url('https://source.unsplash.com/MyzdAXPgr_8/1600x800')"></span>
+                <div class="wrap">
+                    <h3><strong>CGM mit Freestyle Libre 2</strong></h3>
+                    <ul class="text-intro">
+                        <li>bei Start des Sensors einmalige Bluetooth-Kopplung möglich</li>
+                        <li>Sensor überträgt einen Messwert pro Minute<br />
+                            <small>Lesegerät oder <i>LibreLink</i> App</small></li>
+                    </ul>
+                    <ul class="text-intro red" style="margin-top: 2em">
+                        <li>App <i>erzwingt</i> Online-Kopplung </li>
+                        <li>App bietet keine API</li>
+                        <li>
+                            App zeigt über Bluetooth empfangene
+                            Messdaten <i>nicht</i> an</li>
+                        <li>
+                            <i>LibreLink</i> App reagiert <i>nur</i> auf Schwellwerte (niedrig &amp; hoch)
+                        </li>
+                        <li>Verschleierung der Messwerte via NFC (Libre 2)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="bg-black">
+                <span class="background light"
+                    style="background-image:url('https://source.unsplash.com/MyzdAXPgr_8/1600x800')"></span>
+                <div class="wrap">
+                    <h3><strong>CGM mit Freestyle Libre 2</strong></h3>
+                    <ul class="flexblock clients tl-flex-small">
+                        <li>
+                            <div>
+                                <h2>Nightrider BluCon</h2>
+                                <img src="assets/images/img-blucon.png" />
+                                <ul class="description">
+                                    <li><strong class="text-label">Funktion</strong> <span
+                                            class="tl-green">&#10004;</span></li>
+                                    <li><strong class="text-label">Stabilität</strong> <span
+                                            class="tl-green">&#10004;</span></li>
+                                    <li><strong class="text-label">Größe</strong> <span class="tl-red">&#10060;</span>
+                                    </li>
+                                    <li><strong class="text-label">DIY</strong>
+                                        xDrip+ (z.Zt. kein Libre 2)</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h2>MiaMiao 2</h2>
+                                <img src="assets/images/img-mm2.png" />
+                                <ul class="description">
+                                    <li><strong class="text-label">Funktion</strong> <span
+                                            class="tl-red">&#10060;</span></li>
+                                    <li><strong class="text-label">Stabilität</strong> <span
+                                            class="tl-red">&#10060;</span></li>
+                                    <li><strong class="text-label">Größe</strong> <span class="tl-green">&#10004;</span>
+                                    </li>
+                                    <li><strong class="text-label">DIY</strong> Tomato</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h2>Libre 2</h2>
+                                <img src="assets/images/img-libre.png" />
+                                <ul class="description">
+                                    <li><strong class="text-label">Funktion</strong> <span
+                                            class="tl-green">&#10004;&#10004;</span></li>
+                                    <li><strong class="text-label">Stabilität</strong> <span
+                                            class="tl-red">&#10060;</span>
+                                    </li>
+                                    <li><strong class="text-label">Größe</strong> <span
+                                            class="tl-green">&#10004;&#10004;</span></li>
+                                    <li><strong class="text-label">DIY</strong>
+                                        patched LibreLink</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h2>Bubble</h2>
+                                <img src="assets/images/img-bubble.png" />
+                                <ul class="description">
+                                    <li><strong class="text-label">Funktion</strong> <span
+                                            class="tl-green">&#10004;&#10004;</span></li>
+                                    <li><strong class="text-label">Stabilität</strong> <span
+                                            class="tl-green">&#10004;</span></li>
+                                    <li><strong class="text-label">Größe</strong> <span class="tl-green">&#10004;</span>
+                                    </li>
+                                    <li><strong class="text-label">DIY</strong> DiaBox</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+
+            <section class="bg-black">
+                <span class="background dark"
+                    style="background-image:url('https://source.unsplash.com/AT77Q0Njnt0/1600x800')"></span>
+                <div class="wrap">
+                    <h3>Nightscout <strong>xDrip+</strong></h3>
+                    <div class="flex-content">
+                        <ul class="text-intro">
+                            <li>Kalibrierung für Libre<br /><small>Erhöhung der Genauigkeit der BZ-Werte</small></li>
+                            <li>gute Visualisierung<br /><small>anderes
+                                    Vorhersagemodell als <i>AndroidAPS</i> <span class="tl-red">&#9888;</span></small>
+                            </li>
+                            <li>flexible Alarmierung</li>
+                            <li><i>Sync Groups</i> mit anderen Mobilgeräten<br /><small>gleiche Daten für Eltern oder
+                                    Partner</small></li>
+                            <li>von vielen DIY Apps unterstützt</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="flexblock tl-flex-small" style="position:
+            absolute; top: 0; bottom: 0; right: 0; align-content: center;">
+                    <li><img src="assets/images/scr-xdp-main.png" style="width: 320px" /></li>
+                    <li><img src="assets/images/scr-xdp-history.png" style="width: 320px" /></li>
+                    <li><img src="assets/images/scr-xdp-stats.png" style="width: 320px" /></li>
+                </div>
+            </section>
+
+
+            <section class="bg-black">
+                <span class="background light"
+                    style="background-image:url('https://source.unsplash.com/GrmwVnVSSdU/1600x800')"></span>
+                <div class="wrap">
+                    <h3>AndroidAPS &ndash; <strong>Pumpen</strong></h3>
+                    <div class="flex-content">
+                        <ul class="text-intro">
+                            <li>DanaR</li>
+                            <li>DanaRS</li>
+                            <li>Accu-Check Insight</li>
+                            <li>Accu-Check Combo<br /><small><i>ruffy</i> App</small></li>
+                            <li>Medtronic<br /><small><i>RileyLink</i> Bridge</small></li>
+                            <li>ICT &amp; Virtuelle Pumpe<br /><small><i>Open Loop</i></small></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="bg-black">
+                <span class="background dark"
+                    style="background-image:url('https://source.unsplash.com/s6SmNTRpw4o/1600x800')"></span>
+                <div class="wrap">
+                    <h3><strong>Pumpe</strong></h3>
+                    <ul class="flexblock clients tl-flex-small">
+                        <li>
+                            <div>
+                                <h2>Accu-Check Spirit Combo</h2>
+                                <ul class="description">
+                                    <li><strong class="text-label">Pro <span class="tl-green">&#10004;</span></strong>
+                                    </li>
+                                    <li>bewährt</li>
+                                    <li>AA Batterie</li>
+                                    <li><strong class="text-label">Contra <span class="tl-red">&#10060;</span></strong>
+                                    </li>
+                                    <li>kein SMB</li>
+                                    <li><strong class="text-label">DIY</strong>
+                                        ruffy</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h2>Dana RS</h2>
+                                <ul class="description">
+                                    <li><strong class="text-label">Pro <span class="tl-green">&#10004;</span></strong>
+                                    </li>
+                                    <li>offen für DIYPS</li>
+                                    <li><strong class="text-label">Contra <span class="tl-red">&#10060;</span></strong>
+                                    </li>
+                                    <li>wenig verbreitet</li>
+                                    <li>properitäre Batterie</li>
+                                    <li>Luer mit Linksgewinde</li>
+                                    <li><strong class="text-label">DIY</strong> AndroidAPS</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="bg-black">
+                <span class="background dark"
+                    style="background-image:url('https://source.unsplash.com/yBzrPGLjMQw/1600x800')"></span>
+                <div class="wrap">
+                    <h3>AndroidAPS &ndash; <strong>Smartwatch</strong></h3>
+                    <div class="flex-content">
+                        <ul class="text-intro">
+                            <li>WearOS<br /><small>inklusive Steuerung</small></li>
+                            <li>Garmin<br /><small>Visualisierung via <i>Connect IQ</i></small></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="bg-black">
+                <span class="background dark"
+                    style="background-image:url('https://source.unsplash.com/yBzrPGLjMQw/1600x800')"></span>
+                <div class="wrap">
+                    <h3><strong>Garmin fēnix</strong></h3>
+                    <ul class="text-intro">
+                        <li>lange Laufzeit</li>
+                        <li>verschiedene Apps
+                            <ul>
+                                <li><i>xDrip+ Watchface</i></li>
+                                <li><i>xDrip+ Widget</i></li>
+                                <li><i>xDrip+/Spike Datafield</i></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <img src="assets/images/img-fenix.png"
+                    style="position: absolute; left: 45%; bottom: 0; top: 0; margin: auto" />
+            </section>
+
+
+            <section class="fullscreen bg-black">
+                <span class="background dark"
+                    style="background-image:url('https://source.unsplash.com/MldQeWmF2_g/1600x800')"></span>
+                <div class="wrap">
+                    <h3>Nightscout Monitor</h3>
+                    <div class="flex-content">
+                        <ul class="text-intro">
+                            <li>Protokollierung<br /><small>Behandlungen &amp; BZ</small></li>
+                            <li>lesender Zugriff<br /><small>für den Arzt</small></li>
+                            <li>statistische Auswertungen</li>
+                            <li>Visualisierung</li>
+                            <li>kann überall betrieben werden<br /><small>Cloud,
+                                    Hosted, On Premise, &hellip;</small></li>
+                        </ul>
+                    </div>
+                </div>
+                <img src="assets/images/scr-ns-report.png"
+                    style="position: absolute; left: 30%; bottom: 2%; height: 60%; margin: auto" />
+                <img src="assets/images/scr-ns-status.png"
+                    style="position: absolute; right: 2%; top: 2%; height: 60%; margin: auto" />
+            </section>
+
+
+            <section class="fullscreen">
+                <img src="assets/images/diyps-tl.svg" style="position: absolute; top: 0; right: 0; left:
+                    0; bottom: 0; margin: auto; height: 80%;" />
+            </section>
+
+
+            <section>
+                <!--.wrap = container (width: 90%) -->
+                <div class="wrap size-50">
+                    <h3><strong>Links</strong></h3>
+                    <ul class="text-cols">
+                        <li>Genome | <a href="http://www.genomemag.com/nightscout-diabetes-type1/"
+                                target="diyps-links">#WeAreNotWaiting</a></li>
+                        <li>Dana M. Lewis | <a href="https://www.artificialpancreasbook.com/"
+                                target="diyps-links">Automated Insulin
+                                Delivery</a></li>
+                        <li>OPENAPS.ORG | <a href="https://openaps.org/" target="diyps-links">#WeAreNotWaiting to reduce
+                                the burden of Type 1 diabetes</a></li>
+                        <li>DIYPS.org | <a href="https://diyps.org/" target="diyps-links">#WeAreNotWaiting to
+                                make the world a better place</a></li>
+                        <li>Diabetiker Thueringen e.V. | <a
+                                href="https://www.diabetiker-th.de/de/geschichte-des-diabetes__55/"
+                                target="diyps-links">Geschichte der Diabetologie</a></li>
+                        <li>JDRF | <a
+                                href="https://www.jdrf.org/press-releases/jdrf-announces-new-initiative-to-pave-way-for-open-protocol-automated-insulin-delivery-systems/"
+                                target="diyps-links">New Initiative to Pave Way for Open Protocol Automated Insulin
+                                Delivery Systems</a></li>
+                        <li>JDRF | <a
+                                href="https://jdrf.org.uk/about-us/position-statements-reports/position-statements/jdrfs-uk-position-statement-on-type-1-diabetes-diy-technologies/"
+                                target="diyps-links">Statement on type 1 diabetes ‘DIY’ technologies</a></li>
+                        <li>Diabetes Care | <a href="https://doi.org/10.2337/dci19-0028" target="diyps-links">Clinical
+                                Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the
+                                International Consensus on Time in Range</a></li>
+                    </ul>
+                    <hr />
+                    <ul class="text-cols">
+                        <li><a href="https://androidaps.readthedocs.io/en/latest/" target="diyps-links">AndroidAPS
+                                Documentation</a>
+                        </li>
+                        <li><a href="https://jamorham.github.io/#xdrip-plus" target="diyps-links">xDrip+</a>
+                        </li>
+                        <li>Garmin
+                            Connect IQ | <a
+                                href="https://apps.garmin.com/en-US/apps/8fab3746-f56f-4b41-b3c7-5f4aaeaed6c9"
+                                target="diyps-links">xDrip+ Watchface</a></li>
+                        <li><a href="https://github.com/nightscout/cgm-remote-monitor#nightscout-web-monitor-aka-cgm-remote-monitor"
+                                target="diyps-links">Nightscout Web Monitor (a.k.a. cgm-remote-monitor)</a></li>
+                        <li><a href="https://hub.docker.com/r/liske/cgm-remote-monitor" target="diyps-links">Nightscout
+                                Docker Image</a></li>
+                        <li><a href="https://nightscout-reporter.zreptil.de/" target="diyps-links">Nightscout
+                                Reporter</a></li>
+                    </ul>
+
+                </div>
+                <!-- .end .wrap -->
+            </section>
+
+
+            <section class="">
+                <span class="background "
+                    style="background-image:url('https://source.unsplash.com/IuLgi9PWETU/1600x800')"></span>
+                <div class="wrap">
+                    <h1>
+                        <strong>Vielen Dank!</strong>
+                    </h1>
+                    <p class="text-context">https://fiasko.io/</p>
+                </div>
+                <footer class="alignleft">
+                    <small><strong>Bilder:</strong> <a
+                    href="https://unsplash.com/collections/9269426/diy-closed-loop"
+                    target="diyps-links">Unsplash<a></small>
+                </footer>
+            </section>
+        </article>
+    </main>
+    <!--main-->
+
+    <footer>
+        <div class="wrap">
+            <div class="alignright">
+                <strong>DIY Closed Looping</strong><br />
+                <small>Thomas Liske, 13.01.2020</small>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function (e) {
+            window.ws = new WebSlides();
+        });
+    </script>
+</body>
+
+</html>

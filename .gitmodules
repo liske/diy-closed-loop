@@ -1,0 +1,4 @@
+[submodule "assets/webslides"]
+	path = assets/webslides
+	url = https://github.com/webslides/WebSlides.git
+	branch = master
